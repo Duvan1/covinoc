@@ -1,0 +1,55 @@
+<header>
+  <div class="d-flex flex-column align-items-center mb-4">
+    <img src="assets/imgs/logo-covinoc-home.jpg" />
+
+    <div class="bg-green w-100">
+      <div class="container pb-5">
+        <nav class="navbar navbar-dark bg-green w-100">
+          <div class="d-flex align-items-center navbar-text nav-item">
+            <div class="plus"></div>
+            Nuevo
+          </div>
+        </nav>
+
+        <form class="row">
+          <div class="form-group col-md-6">
+            <label for="title">Titulo</label>
+            <input
+              type="text"
+              class="form-control transparent-input"
+              id="title"
+              aria-describedby="Titulo"
+              placeholder="Titulo de la tarea"
+              name="title"
+              [(ngModel)]="model.title"
+              required
+            />
+          </div>
+          <div class="col-md-3 d-flex align-items-end justify-content-center">
+            <label class="form-check-label" for="complete">
+              Tarea completada
+            </label>
+            <input
+              class="form-check-input mx-2"
+              type="checkbox"
+              value=""
+              id="complete"
+              name="state"
+              [(ngModel)]="model.state"
+            />
+          </div>
+          <div class="col-md-3 d-flex align-items-end justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-light shadow"
+              [disabled]="!model.title"
+              (click)="createTask()"
+            >
+              Guardar tarea
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>

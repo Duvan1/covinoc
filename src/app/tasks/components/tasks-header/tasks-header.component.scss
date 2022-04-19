@@ -1,0 +1,45 @@
+a {
+  text-decoration: none !important;
+}
+
+.bg-green {
+  background-color: var(--bs-teal) !important;
+}
+
+.plus {
+  --b: 4px;
+  width: 40px;
+  aspect-ratio: 1/1;
+  border: 10px solid var(--bs-teal);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      var(--bs-teal) 90deg,
+      #fff 0
+    )
+    calc(100% + var(--b) / 2) calc(100% + var(--b) / 2) / calc(50% + var(--b))
+    calc(50% + var(--b));
+  display: inline-block;
+}
+
+.transparent-input {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border-bottom: 1px solid white;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 0;
+  padding-left: 0;
+}
+label {
+  color: whitesmoke;
+  font-size: 0.8rem;
+}
+::placeholder {
+  color: whitesmoke;
+  opacity: 1;
+}
+
+.btn-light{
+    border-radius: 1rem !important;
+}

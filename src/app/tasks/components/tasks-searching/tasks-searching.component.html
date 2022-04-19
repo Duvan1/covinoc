@@ -1,0 +1,26 @@
+<div class="row d-flex align-items-center justify-content-center mb-4">
+  <div class="col-6">
+    <h4>Lista de tareas</h4>
+  </div>
+  <div class="col-6">
+    <form class="form-horizontal w3-panel">
+      <div class="row form-group has-success has-feedback">
+        <div class="col-sm-9 p-0">
+          <input
+            type="text"
+            class="form-control"
+            id="buscar"
+            placeholder="Buscar"
+            [(ngModel)]="busqueda"
+            name="busqueda"
+          />
+        </div>
+        <div class="col-sm-3 p-0">
+          <button (click)="buscar.emit(busqueda)" class="btn btn-primary">
+            buscar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

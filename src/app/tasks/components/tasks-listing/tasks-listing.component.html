@@ -1,0 +1,45 @@
+<div class="card shadow p-3">
+  <table class="table table-sm table-borderless table-hover">
+    <thead>
+      <tr>
+        <th class="ordered">ID</th>
+        <th class="ordered">Mis tareas</th>
+        <th class="ordered">Completada</th>
+        <th class="ordered">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="clickable"
+        *ngFor="
+          let task of tasksList
+            | paginate: { itemsPerPage: 5, currentPage: pages }
+        "
+      >
+        <td>{{ task.id }}</td>
+        <td>{{ task.title }}</td>
+        <td>
+          <input
+            class="form-check-input mx-2"
+            type="checkbox"
+            value=""
+            id="complete"
+            name="state"
+            [(ngModel)]="task.state"
+            [disabled]="true"
+          />
+        </td>
+        <td>
+          <img
+            (click)="deleteTask(task.id)"
+            src="assets/imgs/trash-icon.png"
+            alt=""
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="m-3 d-flex align-items-center justify-content-center">
+  <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+</div>
